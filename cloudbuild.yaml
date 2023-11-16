@@ -4,13 +4,7 @@ steps:
     args: [
             'build',
             '-t',
-            'us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:${SHORT_SHA}',
-            '-t',
-            'us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:latest',
-            '--cache-from',
-            'us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:latest',
-            '.'
-          ]
+            'us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:${SHORT_SHA}','.']
 
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
@@ -19,4 +13,4 @@ steps:
 # Store images in Google Artifact Registry 
 images:
   - us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:${SHORT_SHA}
-  - us-central1-docker.pkg.dev/mindful-marking-388908/python-repo/my-app:latest
+ 
